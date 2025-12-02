@@ -181,8 +181,8 @@ if __name__ == "__main__":
                 if (volumen_log == volumen and brillo_log == brillo):
                     continue
 
-                # if (volumen_log != volumen):
-                #     set_volumen(volumen)
+                if (volumen_log != volumen):
+                    set_volumen(volumen)
                 if (brillo_log != brillo):
                     set_brillo(brillo)
 
