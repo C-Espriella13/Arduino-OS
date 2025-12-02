@@ -3,7 +3,7 @@ from subprocess import run
 from time import sleep
 from threading import Lock, Thread
 from ctypes import POINTER, cast
-from comtypes import CLSCTX_ALL
+from comtypes import CLSCTX_ALL, CoInitialize
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 
 mutex = Lock()
@@ -57,6 +57,7 @@ Remove-Event -SourceIdentifier BrilloCambio | Out-Null
 
 def verificar_volumen():
     global brillo_sys, volumen_sys
+    CoInitialize()
     while True:
         volumen = get_volumen()
         with mutex:
